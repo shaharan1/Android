@@ -2,31 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_dark"
+    android:background="@color/logo_bg"
     android:gravity="center"
     android:orientation="vertical">
 
     <ImageView
-        android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_width="280dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center_horizontal"
         android:contentDescription="@string/app_name"
-        android:src="@mipmap/ic_launcher" />
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/app_name"
-        android:textColor="@color/white"
-        android:textSize="26sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="30dp"
         android:text="Connecting to server…"
-        android:textColor="#CCFFFFFF"
+        android:textColor="@color/text_secondary"
         android:textSize="14sp" />
 
 </LinearLayout>

@@ -60,7 +60,7 @@ public class BookAppointmentActivity extends AppCompatActivity {
         btnConfirm = findViewById(R.id.btnConfirm);
         progressBar = findViewById(R.id.progressBar);
 
-        spinnerPayment.setAdapter(new ArrayAdapter<>(this,
+        spinnerPayment.setAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_dropdown_item,
                 new String[]{"Cash", "bKash", "Bank"}));
 
@@ -85,7 +85,7 @@ public class BookAppointmentActivity extends AppCompatActivity {
                         doctors.add(obj);
                         labels.add(str(obj, "name") + " - " + str(obj, "specialization"));
                     }
-                    spinnerDoctor.setAdapter(new ArrayAdapter<>(this,
+                    spinnerDoctor.setAdapter(new ArrayAdapter<String>(BookAppointmentActivity.this,
                             android.R.layout.simple_spinner_dropdown_item, labels));
                 } else {
                     Toast.makeText(BookAppointmentActivity.this,

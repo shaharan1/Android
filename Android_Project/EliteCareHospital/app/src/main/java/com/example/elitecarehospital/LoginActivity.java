@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.elitecarehospital.network.ApiClient;
+import com.example.elitecarehospital.network.ApiClientError;
 import com.example.elitecarehospital.network.ApiService;
 import com.example.elitecarehospital.network.LoginRequest;
 import com.example.elitecarehospital.network.LoginResponse;

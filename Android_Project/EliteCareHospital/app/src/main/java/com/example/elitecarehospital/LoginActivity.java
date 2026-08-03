@@ -38,6 +38,11 @@ public class LoginActivity extends AppCompatActivity {
 
         session = new SessionManager(this);
 
+        if (session.isLoggedIn()) {
+            goToMain();
+            return;
+        }
+
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
@@ -63,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         setLoading(true);
-        tvStatus.setText("Connecting to server...");
+        showStatus("Connecting to server...", R.color.text_secondary);
 
         ApiService api = ApiClient.getInstance(this);
         api.login(new LoginRequest(email, password)).enqueue(new Callback<LoginResponse>() {
@@ -74,12 +79,11 @@ public class LoginActivity extends AppCompatActivity {
                     LoginResponse body = response.body();
                     session.saveLogin(body.getToken(), body.getUserId(), body.getName(),
                             body.getEmail(), body.getPhone(), body.getRole(), body.getImage());
-                    tvStatus.setText("Welcome " + safe(body.getName()));
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                    finish();
+                    showStatus("Welcome " + safe(body.getName()), R.color.success);
+                    btnLogin.postDelayed(() -> goToMain(), 500);
                 } else {
-                    tvStatus.setText("");
                     String msg = ApiClientError.getMessage(response);
+                    showStatus("Login failed", R.color.danger);
                     Toast.makeText(LoginActivity.this, msg, Toast.LENGTH_LONG).show();
                 }
             }
@@ -87,16 +91,29 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
                 setLoading(false);
-                tvStatus.setText("");
+                showStatus("Cannot reach server", R.color.danger);
                 Toast.makeText(LoginActivity.this,
                         "Network error: " + t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
 
+    private void goToMain() {
+        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        finish();
+    }
+
     private void setLoading(boolean loading) {
         progressBar.setVisibility(loading ? View.VISIBLE : View.GONE);
         btnLogin.setEnabled(!loading);
+        etEmail.setEnabled(!loading);
+        etPassword.setEnabled(!loading);
+    }
+
+    private void showStatus(String msg, int colorRes) {
+        tvStatus.setText(msg);
+        tvStatus.setTextColor(getResources().getColor(colorRes, getTheme()));
+        tvStatus.setVisibility(View.VISIBLE);
     }
 
     private String safe(String s) {

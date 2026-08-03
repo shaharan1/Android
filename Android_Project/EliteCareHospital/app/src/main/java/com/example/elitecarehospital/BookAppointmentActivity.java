@@ -60,9 +60,11 @@ public class BookAppointmentActivity extends AppCompatActivity {
         btnConfirm = findViewById(R.id.btnConfirm);
         progressBar = findViewById(R.id.progressBar);
 
-        spinnerPayment.setAdapter(new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_dropdown_item,
-                new String[]{"Cash", "bKash", "Bank"}));
+        ArrayAdapter<String> paymentAdapter = new ArrayAdapter<>(this,
+                R.layout.spinner_item,
+                new String[]{"Cash", "bKash", "Bank"});
+        paymentAdapter.setDropDownViewResource(R.layout.spinner_item);
+        spinnerPayment.setAdapter(paymentAdapter);
 
         btnCheckRate.setOnClickListener(v -> checkRate());
         btnConfirm.setOnClickListener(v -> confirmBooking());
@@ -85,8 +87,10 @@ public class BookAppointmentActivity extends AppCompatActivity {
                         doctors.add(obj);
                         labels.add(str(obj, "name") + " - " + str(obj, "specialization"));
                     }
-                    spinnerDoctor.setAdapter(new ArrayAdapter<String>(BookAppointmentActivity.this,
-                            android.R.layout.simple_spinner_dropdown_item, labels));
+                    ArrayAdapter<String> doctorAdapter = new ArrayAdapter<>(BookAppointmentActivity.this,
+                            R.layout.spinner_item, labels);
+                    doctorAdapter.setDropDownViewResource(R.layout.spinner_item);
+                    spinnerDoctor.setAdapter(doctorAdapter);
                 } else {
                     Toast.makeText(BookAppointmentActivity.this,
                             ApiClientError.getMessage(response), Toast.LENGTH_LONG).show();

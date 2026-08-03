@@ -10,9 +10,10 @@
         <item name="android:windowBackground">@color/background</item>
         <item name="android:textColorPrimary">@color/text_primary</item>
         <item name="android:textColorSecondary">@color/text_secondary</item>
-        <item name="android:textColorHint">@color/text_secondary</item>
+        <item name="android:textColorHint">#999999</item>
         <item name="android:textColor">@color/text_primary</item>
-        <item name="editTextStyle">@style/Widget.EliteCareHospital.EditText</item>
+        <item name="android:spinnerItemStyle">@style/SpinnerItemStyle</item>
+        <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropdownStyle</item>
     </style>
 
     <style name="Theme.EliteCareHospital.Splash" parent="Theme.EliteCareHospital">
@@ -20,12 +21,16 @@
         <item name="android:windowBackground">@color/primary_dark</item>
     </style>
 
-    <style name="Widget.EliteCareHospital.EditText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">@color/primary</item>
-        <item name="boxBackgroundColor">@color/card_white</item>
-        <item name="hintTextColor">@color/primary</item>
+    <style name="SpinnerItemStyle" parent="Widget.AppCompat.DropDownItem.Spinner">
         <item name="android:textColor">@color/text_primary</item>
-        <item name="android:textColorHint">@color/text_secondary</item>
         <item name="android:textSize">15sp</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <style name="SpinnerDropdownStyle" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:background">#FFFFFF</item>
     </style>
 </resources>

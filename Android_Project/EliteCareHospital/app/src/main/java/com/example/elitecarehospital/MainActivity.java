@@ -143,17 +143,17 @@ public class MainActivity extends AppCompatActivity {
                 menus.add(new MenuLink("Doctors", "🩺", TYPE_LIST, "api/doctors",
                         "[\"name\",\"designation\"]", "[\"specialization\",\"phone\"]", null, null));
                 menus.add(new MenuLink("Nurses", "💉", TYPE_LIST, "api/nurses",
-                        "[\"name\",\"wardName\"]", "[\"designation\",\"phone\"]", null, null));
+                        "[\"name\",\"nurseType\"]", "[\"assignedWard\",\"phone\"]", null, null));
                 menus.add(new MenuLink("Appointments", "📅", TYPE_LIST, "api/appointments",
                         "[\"appointmentNumber\",\"patientName\"]", "[\"doctorName\",\"appointmentDate\",\"status\"]", null, null));
                 menus.add(new MenuLink("Doctor Departments", "🏥", TYPE_LIST, "api/doctor-departments",
-                        "[\"name\"]", "[\"description\"]", null, null));
+                        "[\"departmentName\"]", "[\"description\"]", null, null));
                 menus.add(new MenuLink("Office Staff", "🧑‍💼", TYPE_LIST, "api/office-staff",
-                        "[\"name\"]", "[\"designation\",\"phone\"]", null, null));
+                        "[\"name\",\"position\"]", "[\"department\",\"phone\"]", null, null));
                 menus.add(new MenuLink("Billing Invoices", "🧾", TYPE_LIST, "api/billing-invoices",
-                        "[\"invoiceNumber\",\"patientName\"]", "[\"status\",\"totalAmount\"]", null, null));
+                        "[\"invoiceNumber\",\"patientName\"]", "[\"netAmount\",\"paymentStatus\"]", null, null));
                 menus.add(new MenuLink("Wards", "🛏️", TYPE_LIST, "api/infrastructure/wards",
-                        "[\"wardName\",\"wardNumber\"]", "[\"departmentName\"]", null, null));
+                        "[\"name\",\"roomType\"]", "[\"departmentName\",\"totalBeds\"]", null, null));
                 menus.add(new MenuLink("Beds", "🛏️", TYPE_LIST, "api/infrastructure/beds",
                         "[\"bedNumber\",\"status\"]", "[\"wardName\"]", null, null));
                 menus.add(new MenuLink("Book Appointment", "➕", TYPE_ACTIVITY, null,
@@ -212,11 +212,11 @@ public class MainActivity extends AppCompatActivity {
                 menus.add(new MenuLink("Pharmacy Dashboard", "📊", TYPE_DETAIL, "api/pharmacy/dashboard",
                         null, null, null, null));
                 menus.add(new MenuLink("Medicine Stock", "💊", TYPE_LIST, "api/pharmacy/stock",
-                        "[\"medicineName\"]", "[\"batchNumber\",\"quantity\",\"expiryDate\"]", null, null));
+                        "[\"medicineName\"]", "[\"batchNumber\",\"availableQuantity\",\"expiryDate\"]", null, null));
                 menus.add(new MenuLink("Medicines", "🧪", TYPE_LIST, "api/medicines",
-                        "[\"name\",\"genericName\"]", "[\"brandName\"]", null, null));
+                        "[\"medicineName\",\"genericName\"]", "[\"dosage\"]", null, null));
                 menus.add(new MenuLink("Pharmacy Sales", "🛒", TYPE_LIST, "api/pharmacy/sales",
-                        "[\"saleNumber\",\"patientName\"]", "[\"totalAmount\",\"paymentStatus\"]", null, null));
+                        "[\"saleInvoiceNo\",\"patientName\"]", "[\"netPayable\",\"paymentStatus\"]", null, null));
                 menus.add(new MenuLink("My Profile", "👤", TYPE_ACTIVITY, null,
                         null, null, ProfileActivity.class, null));
                 break;

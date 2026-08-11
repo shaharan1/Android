@@ -16,9 +16,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
     // Emulator
-    private static final String BASE_URL = "http://10.0.2.2:8085/";
+//    private static final String BASE_URL = "http://10.0.2.2:8085/";
 
-//    public static final String BASE_URL = "http://192.168.0.103:8085/";
+    public static final String BASE_URL = "http://192.168.0.103:8085/";
 
     private static ApiService apiService;
 

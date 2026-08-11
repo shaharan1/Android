@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F0E8"
+    android:background="@color/background"
     android:fillViewport="true">
 
     <LinearLayout
@@ -34,7 +34,7 @@
                 android:layout_width="40dp"
                 android:layout_height="3dp"
                 android:layout_marginTop="16dp"
-                android:background="#8B4513" />
+                android:background="@color/primary" />
 
         </LinearLayout>
 
@@ -44,7 +44,7 @@
             android:fontFamily="sans-serif-medium"
             android:letterSpacing="0.15"
             android:text="HOSPITAL MANAGEMENT"
-            android:textColor="#6B3410"
+            android:textColor="@color/primary_dark"
             android:textSize="13sp" />
 
         <TextView
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Caring for every moment..."
-            android:textColor="#A08060"
+            android:textColor="@color/text_secondary"
             android:textSize="12sp"
             android:textStyle="italic" />
 
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="EMAIL"
-                android:textColor="#8B6550"
+                android:textColor="@color/text_secondary"
                 android:textSize="11sp"
                 android:letterSpacing="0.1" />
 
@@ -78,14 +78,14 @@
                 android:background="@drawable/bg_input"
                 android:drawableStart="@android:drawable/sym_action_email"
                 android:drawablePadding="12dp"
-                android:drawableTint="#A08060"
+                android:drawableTint="@color/text_hint"
                 android:hint="Enter your email"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress"
                 android:paddingHorizontal="16dp"
                 android:singleLine="true"
-                android:textColor="#3D2B1F"
-                android:textColorHint="#B0A090"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
                 android:textSize="15sp" />
 
         </LinearLayout>
@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="PASSWORD"
-                android:textColor="#8B6550"
+                android:textColor="@color/text_secondary"
                 android:textSize="11sp"
                 android:letterSpacing="0.1" />
 
@@ -112,14 +112,14 @@
                 android:background="@drawable/bg_input"
                 android:drawableStart="@android:drawable/ic_lock_idle_lock"
                 android:drawablePadding="12dp"
-                android:drawableTint="#A08060"
+                android:drawableTint="@color/text_hint"
                 android:hint="Enter your password"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
                 android:paddingHorizontal="16dp"
                 android:singleLine="true"
-                android:textColor="#3D2B1F"
-                android:textColorHint="#B0A090"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_hint"
                 android:textSize="15sp" />
 
         </LinearLayout>
@@ -129,7 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:textColor="#DC2626"
+            android:textColor="@color/danger"
             android:textSize="13sp"
             android:visibility="gone" />
 
@@ -139,7 +139,7 @@
             android:layout_height="28dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="12dp"
-            android:indeterminateTint="#8B4513"
+            android:indeterminateTint="@color/primary"
             android:visibility="gone" />
 
         <Button
@@ -148,11 +148,11 @@
             android:layout_height="52dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/bg_button"
-            android:backgroundTint="#8B4513"
+            android:backgroundTint="@color/primary"
             android:fontFamily="sans-serif-medium"
             android:letterSpacing="0.08"
             android:text="SIGN IN"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="16sp" />
 
         <TextView
@@ -160,7 +160,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="EliteCare Hospital"
-            android:textColor="#C0A080"
+            android:textColor="@color/text_secondary"
             android:textSize="13sp"
             android:textStyle="italic" />
 
@@ -169,7 +169,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="v1.0 • Secure Login"
-            android:textColor="#C0A080"
+            android:textColor="@color/text_hint"
             android:textSize="11sp" />
 
     </LinearLayout>

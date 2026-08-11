@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F0E8"
+    android:background="@color/background"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -26,7 +26,7 @@
             android:layout_width="50dp"
             android:layout_height="3dp"
             android:layout_marginTop="20dp"
-            android:background="#8B4513" />
+            android:background="@color/primary" />
 
     </LinearLayout>
 
@@ -36,21 +36,21 @@
         android:layout_marginTop="28dp"
         android:letterSpacing="0.2"
         android:text="HOSPITAL MANAGEMENT SYSTEM"
-        android:textColor="#6B3410"
+        android:textColor="@color/primary_dark"
         android:textSize="12sp" />
 
     <ProgressBar
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginTop="40dp"
-        android:indeterminateTint="#8B4513" />
+        android:indeterminateTint="@color/primary" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Connecting to server..."
-        android:textColor="#A08060"
+        android:textColor="@color/text_secondary"
         android:textSize="13sp" />
 
 </LinearLayout>

@@ -245,26 +245,26 @@ public class MainActivity extends AppCompatActivity {
 
             case "InventoryManager":
                 menus.add(new MenuLink("Medicine Stock", "💊", TYPE_LIST, "api/pharmacy/stock",
-                        "[\"medicineName\"]", "[\"batchNumber\",\"quantity\",\"expiryDate\"]", null, null));
+                        "[\"medicineName\"]", "[\"batchNumber\",\"availableQuantity\",\"expiryDate\"]", null, null));
                 menus.add(new MenuLink("Medicines", "🧪", TYPE_LIST, "api/medicines",
-                        "[\"name\",\"genericName\"]", "[\"brandName\"]", null, null));
+                        "[\"medicineName\",\"genericName\"]", "[\"dosage\"]", null, null));
                 menus.add(new MenuLink("Suppliers", "🚚", TYPE_LIST, "api/pharmacy/suppliers",
                         "[\"name\",\"contactPerson\"]", "[\"phone\",\"email\"]", null, null));
                 menus.add(new MenuLink("Purchases", "📦", TYPE_LIST, "api/purchases",
-                        "[\"purchaseNumber\"]", "[\"supplierName\",\"totalAmount\",\"status\"]", null, null));
+                        "[\"invoiceNo\",\"supplierName\"]", "[\"netAmount\",\"status\"]", null, null));
                 menus.add(new MenuLink("My Profile", "👤", TYPE_ACTIVITY, null,
                         null, null, ProfileActivity.class, null));
                 break;
 
             case "WardManager":
                 menus.add(new MenuLink("Active Admissions", "🏥", TYPE_LIST, "api/admissions/active",
-                        "[\"patientName\",\"admissionCode\"]", "[\"wardName\",\"bedNumber\",\"status\"]", null, null));
+                        "[\"patientName\",\"admissionId\"]", "[\"wardName\",\"assignedBedNumber\",\"status\"]", null, null));
                 menus.add(new MenuLink("Wards", "🛏️", TYPE_LIST, "api/infrastructure/wards",
-                        "[\"wardName\",\"wardNumber\"]", "[\"departmentName\"]", null, null));
+                        "[\"name\",\"roomType\"]", "[\"departmentName\",\"totalBeds\"]", null, null));
                 menus.add(new MenuLink("Beds", "🛏️", TYPE_LIST, "api/infrastructure/beds",
                         "[\"bedNumber\",\"status\"]", "[\"wardName\"]", null, null));
                 menus.add(new MenuLink("Meal Schedules", "🍽️", TYPE_LIST, "api/meal-schedules",
-                        "[\"mealName\"]", "[\"scheduleDate\",\"mealTime\"]", null, null));
+                        "[\"mealName\"]", "[\"servingTime\",\"status\"]", null, null));
                 menus.add(new MenuLink("My Profile", "👤", TYPE_ACTIVITY, null,
                         null, null, ProfileActivity.class, null));
                 break;

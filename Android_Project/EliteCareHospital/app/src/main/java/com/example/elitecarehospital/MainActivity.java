@@ -223,9 +223,9 @@ public class MainActivity extends AppCompatActivity {
 
             case "LabTechnician":
                 menus.add(new MenuLink("Test Orders", "🔬", TYPE_LIST, "api/test-orders",
-                        "[\"orderNumber\",\"patientName\"]", "[\"status\",\"testName\"]", null, null));
+                        "[\"testCode\",\"patientName\"]", "[\"testName\",\"orderStatus\"]", null, null));
                 menus.add(new MenuLink("Test Masters", "🧫", TYPE_LIST, "api/tests",
-                        "[\"testName\",\"code\"]", "[\"price\",\"category\"]", null, null));
+                        "[\"testName\",\"testCode\"]", "[\"standardPrice\"]", null, null));
                 menus.add(new MenuLink("My Profile", "👤", TYPE_ACTIVITY, null,
                         null, null, ProfileActivity.class, null));
                 break;
@@ -234,9 +234,9 @@ public class MainActivity extends AppCompatActivity {
                 menus.add(new MenuLink("Billing Dashboard", "📊", TYPE_DETAIL, "api/billing-dashboard/summary",
                         null, null, null, null));
                 menus.add(new MenuLink("Invoices", "🧾", TYPE_LIST, "api/billing-invoices",
-                        "[\"invoiceNumber\",\"patientName\"]", "[\"status\",\"totalAmount\"]", null, null));
+                        "[\"invoiceNumber\",\"patientName\"]", "[\"netAmount\",\"paymentStatus\"]", null, null));
                 menus.add(new MenuLink("Payments", "💳", TYPE_LIST, "api/payments",
-                        "[\"invoiceNumber\"]", "[\"amount\",\"paymentMethod\",\"status\"]", null, null));
+                        "[\"invoiceNumber\",\"patientName\"]", "[\"amount\",\"paymentMethod\",\"paymentStatus\"]", null, null));
                 menus.add(new MenuLink("Other Charges", "💸", TYPE_LIST, "api/charges/others",
                         "[\"description\"]", "[\"amount\",\"category\"]", null, null));
                 menus.add(new MenuLink("My Profile", "👤", TYPE_ACTIVITY, null,

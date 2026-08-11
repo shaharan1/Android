@@ -290,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
                 menus.add(new MenuLink("Doctors", "🩺", TYPE_LIST, "api/doctors",
                         "[\"name\",\"designation\"]", "[\"specialization\",\"phone\"]", null, null));
                 menus.add(new MenuLink("Admissions", "🏥", TYPE_LIST, "api/admissions",
-                        "[\"patientName\",\"admissionCode\"]", "[\"status\"]", null, null));
+                        "[\"patientName\",\"admissionId\"]", "[\"wardName\",\"assignedBedNumber\",\"status\"]", null, null));
                 menus.add(new MenuLink("My Profile", "👤", TYPE_ACTIVITY, null,
                         null, null, ProfileActivity.class, null));
                 break;

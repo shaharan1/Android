@@ -195,11 +195,11 @@ public class MainActivity extends AppCompatActivity {
 
             case "Nurse":
                 menus.add(new MenuLink("Active Admissions", "🏥", TYPE_LIST, "api/admissions/active",
-                        "[\"patientName\",\"admissionCode\"]", "[\"wardName\",\"bedNumber\",\"status\"]", null, null));
+                        "[\"patientName\",\"admissionId\"]", "[\"wardName\",\"assignedBedNumber\",\"status\"]", null, null));
                 menus.add(new MenuLink("Emergency Patients", "🚑", TYPE_LIST, "api/emergency/patients",
-                        "[\"name\",\"triageLevel\"]", "[\"condition\",\"arrivalTime\"]", null, null));
+                        "[\"patientName\",\"triageLevel\"]", "[\"severityLevel\",\"arrivalTime\"]", null, null));
                 menus.add(new MenuLink("Triage Records", "🩺", TYPE_LIST, "api/emergency/triage",
-                        "[\"patientName\"]", "[\"triageLevel\"]", null, null));
+                        "[\"emergencyNumber\",\"triageLevel\"]", "[\"assessedBy\"]", null, null));
                 menus.add(new MenuLink("Patients", "👤", TYPE_LIST, "api/patients",
                         "[\"name\",\"patientCode\"]", "[\"phone\",\"bloodGroup\"]", null, null));
                 menus.add(new MenuLink("Wards", "🛏️", TYPE_LIST, "api/infrastructure/wards",
@@ -271,13 +271,13 @@ public class MainActivity extends AppCompatActivity {
 
             case "Dietician":
                 menus.add(new MenuLink("Diet Plans", "🥗", TYPE_LIST, "api/diet-plans",
-                        "[\"planName\"]", "[\"description\"]", null, null));
+                        "[\"name\",\"dietType\"]", "[\"description\"]", null, null));
                 menus.add(new MenuLink("Diet Assignments", "🍱", TYPE_LIST, "api/diet-assignments",
-                        "[\"patientName\"]", "[\"status\"]", null, null));
+                        "[\"wardName\",\"bedNumber\"]", "[\"status\"]", null, null));
                 menus.add(new MenuLink("Diet History", "📖", TYPE_LIST, "api/diet-history",
-                        "[\"patientName\"]", "[\"status\"]", null, null));
+                        "[\"actionType\"]", "[\"description\"]", null, null));
                 menus.add(new MenuLink("Meals", "🍽️", TYPE_LIST, "api/v1/meals",
-                        "[\"mealName\"]", "[\"mealType\"]", null, null));
+                        "[\"mealMasterName\"]", "[\"billingStatus\"]", null, null));
                 menus.add(new MenuLink("My Profile", "👤", TYPE_ACTIVITY, null,
                         null, null, ProfileActivity.class, null));
                 break;
